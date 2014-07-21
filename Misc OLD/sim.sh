@@ -14,7 +14,7 @@
 
 read -p "Witch software do you want to simulate? Copter=c, Plane=p, Rover=r (c/p/r) " RESPM
 if [ "$RESPM" = "c" ]; then
-    cd ardupilot/ArduCopter
+    cd ~/ardupilot/ArduCopter
     read -p "Do you want to reset parameters to default? (y/n) " RESP
     if [ "$RESP" = "y" ]; then
         sim_vehicle.sh -v ArduCopter -f X -j 2 -w --console --out=192.168.1.13:14550 --out=192.168.1.13:14551
@@ -26,7 +26,7 @@ fi
 if [ "$RESPM" = "p" ]; then
     echo "Plane is not tested"
     echo "Note: JSBSim needs to be installed and path added to .bashrc"
-    cd ardupilot/ArduPlane
+    cd ~/ardupilot/ArduPlane
     read -p "Do you want to reset parameters to default? (y/n) " RESP
     if [ "$RESP" = "y" ]; then
         sim_vehicle.sh -v ArduPlane -j 2 -w --console --out=192.168.1.13:14550 --out=192.168.1.13:14551
@@ -36,7 +36,7 @@ if [ "$RESPM" = "p" ]; then
 fi
 
 if [ "$RESPM" = "r" ]; then
-    cd ardupilot/APMrover2
+    cd ~/ardupilot/APMrover2
     read -p "Do you want to reset parameters to default? (y/n) " RESP
     if [ "$RESP" = "y" ]; then
         sim_vehicle.sh -v APMrover2 -j 2 -w --console --out=192.168.1.13:14550 --out=192.168.1.13:14551
